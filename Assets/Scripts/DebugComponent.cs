@@ -44,26 +44,41 @@ public class DebugComponent : MonoBehaviour
             TargetSphere.transform.Translate((movement * 5) * Time.deltaTime);
         }
 
-        if(Input.GetKeyDown("1") && Sphere1.GetComponents<BounceAnimation>().Length == 0)
+        if(Input.GetKeyDown("1"))
         {
             Sphere1.SetActive(true);
             Sphere2.SetActive(false);
             Sphere3.SetActive(false);
             TargetSphere = Sphere1;
+
+            if(Sphere1.GetComponents<BounceAnimation>().Length == 0)
+            {
+                Sphere1.AddComponent<BounceAnimation>();
+            }
         }
-        if (Input.GetKeyDown("2") && Sphere2.GetComponents<BounceAnimation>().Length == 0)
+        if (Input.GetKeyDown("2"))
         {
             Sphere2.SetActive(true);
             Sphere1.SetActive(false);
             Sphere3.SetActive(false);
             TargetSphere = Sphere2;
+
+            if (Sphere2.GetComponents<BounceAnimation>().Length == 0)
+            {
+                Sphere2.AddComponent<BounceAnimation>();
+            }
         }
-        if (Input.GetKeyDown("3") && Sphere3.GetComponents<BounceAnimation>().Length == 0)
+        if (Input.GetKeyDown("3"))
         {
             Sphere3.SetActive(true);
             Sphere2.SetActive(false);
             Sphere1.SetActive(false);
             TargetSphere = Sphere3;
+
+            if (Sphere3.GetComponents<BounceAnimation>().Length == 0)
+            {
+                Sphere3.AddComponent<BounceAnimation>();
+            }
         }
     }
 }
