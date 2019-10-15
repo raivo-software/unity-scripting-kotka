@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DebugComponent : MonoBehaviour
 {
+    public Transform Parent;
     private GameObject Sphere1;
     private GameObject Sphere2;
     private GameObject Sphere3;
@@ -19,6 +20,9 @@ public class DebugComponent : MonoBehaviour
         Sphere1 = GameObject.FindWithTag("Sphere");
         Sphere2 = GameObject.FindWithTag("Sphere2");
         Sphere3 = GameObject.FindWithTag("Sphere3");
+        Sphere1.transform.SetParent(Parent);
+        Sphere2.transform.SetParent(Parent);
+        Sphere3.transform.SetParent(Parent);
     }
 
     // Update is called once per frame
