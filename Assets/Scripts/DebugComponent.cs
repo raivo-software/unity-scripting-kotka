@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DebugComponent : MonoBehaviour
 {
-    public GameObject Sphere1;
-    public GameObject Sphere2;
-    public GameObject Sphere3;
+    private GameObject Sphere1;
+    private GameObject Sphere2;
+    private GameObject Sphere3;
 
     private GameObject TargetSphere;
 
@@ -16,6 +16,9 @@ public class DebugComponent : MonoBehaviour
     void Start()
     {
         Debug.Log("Starting script");
+        Sphere1 = GameObject.FindWithTag("Sphere");
+        Sphere2 = GameObject.FindWithTag("Sphere2");
+        Sphere3 = GameObject.FindWithTag("Sphere3");
     }
 
     // Update is called once per frame
